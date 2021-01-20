@@ -1,11 +1,15 @@
 plugins {
     kotlin("jvm")
+    kotlin("plugin.serialization")
     id("java-gradle-plugin")
     id("com.gradle.plugin-publish")
 }
 
 dependencies {
     implementation(gradleApi())
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.SERIALIZATION}")
+    implementation("com.charleskorn.kaml:kaml:${Versions.KAML}")
 
     testImplementation(TestingLib.JUNIT)
 }
