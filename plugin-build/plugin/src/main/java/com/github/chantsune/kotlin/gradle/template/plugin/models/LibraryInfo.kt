@@ -8,8 +8,6 @@ import kotlinx.serialization.Transient
 data class LibraryInfo(
     @SerialName("artifact")
     var artifact: String,
-    @Transient
-    var artifactId: ArtifactId = ArtifactId.parse(artifact),
     @SerialName("name")
     var name: String? = null,
     @SerialName("url")
@@ -42,4 +40,6 @@ data class LibraryInfo(
         set(value) {
             name = value
         }
+    @Transient
+    var artifactId: ArtifactId = ArtifactId.parse(artifact)
 }
