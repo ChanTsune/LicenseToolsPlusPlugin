@@ -1,12 +1,9 @@
 package com.github.chantsune.kotlin.gradle.template.plugin
 
 import com.github.chantsune.kotlin.gradle.template.plugin.models.LibraryInfo
-import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.file.RegularFileProperty
-import org.gradle.api.internal.CollectionCallbackActionDecorator
 import org.gradle.api.provider.Property
-import org.gradle.internal.reflect.Instantiator
 import javax.inject.Inject
 
 const val DEFAULT_OUTPUT_FILE = "template-example.txt"

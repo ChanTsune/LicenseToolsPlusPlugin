@@ -1,8 +1,5 @@
 package com.github.chantsune.kotlin.gradle.template.plugin.models
 
-import org.gradle.api.Named
-
-
 data class LibraryInfo(
     val artifactId: ArtifactId,
     val name: String? = null,

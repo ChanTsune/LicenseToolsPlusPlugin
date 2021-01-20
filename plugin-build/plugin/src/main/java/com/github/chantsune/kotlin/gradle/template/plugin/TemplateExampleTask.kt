@@ -31,6 +31,7 @@ abstract class TemplateExampleTask : DefaultTask() {
     @get:OutputFile
     abstract val outputFile: RegularFileProperty
 
+    @get:Input
     abstract var transform: (LibraryInfo) -> LibraryInfo
 
     @TaskAction

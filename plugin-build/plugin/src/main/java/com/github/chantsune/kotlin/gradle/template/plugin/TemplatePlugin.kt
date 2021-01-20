@@ -2,9 +2,6 @@ package com.github.chantsune.kotlin.gradle.template.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.internal.CollectionCallbackActionDecorator
-import org.gradle.internal.reflect.Instantiator
-import javax.inject.Inject
 
 const val EXTENSION_NAME = "templateExampleConfig"
 const val TASK_NAME = "templateExample"
