@@ -1,6 +1,9 @@
 package com.github.chantsune.kotlin.gradle.template.plugin
 
+import com.charleskorn.kaml.Yaml
 import com.github.chantsune.kotlin.gradle.template.plugin.models.LibraryInfo
+import kotlinx.serialization.builtins.ListSerializer
+import kotlinx.serialization.encodeToString
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.provider.Property
@@ -28,6 +31,8 @@ abstract class TemplateExampleTask : DefaultTask() {
     @get:Optional
     abstract val tag: Property<String>
 
+    abstract val inputFile: RegularFileProperty
+
     @get:OutputFile
     abstract val outputFile: RegularFileProperty
 
@@ -40,8 +45,14 @@ abstract class TemplateExampleTask : DefaultTask() {
 
         logger.lifecycle("$prettyTag message is: ${message.orNull}")
         logger.lifecycle("$prettyTag tag is: ${tag.orNull}")
+        logger.lifecycle("$prettyTag inputFile is: ${inputFile.orNull}")
         logger.lifecycle("$prettyTag outputFile is: ${outputFile.orNull}")
-
-        outputFile.get().asFile.writeText("$prettyTag ${message.get()}")
+        inputFile.get().asFile.readText().let {
+            Yaml.default.decodeFromString(ListSerializer(LibraryInfo.serializer()), it)
+        }.map(transform).let {
+            Yaml.default.encodeToString(it)
+        }.let {
+            outputFile.get().asFile.writeText(it)
+        }
     }
 }

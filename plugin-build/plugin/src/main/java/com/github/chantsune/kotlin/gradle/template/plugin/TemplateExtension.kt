@@ -6,8 +6,6 @@ import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.provider.Property
 import javax.inject.Inject
 
-const val DEFAULT_OUTPUT_FILE = "template-example.txt"
-
 @Suppress("UnnecessaryAbstractClass")
 abstract class TemplateExtension @Inject constructor(project: Project) {
 
@@ -17,16 +15,26 @@ abstract class TemplateExtension @Inject constructor(project: Project) {
 
     val tag: Property<String> = objects.property(String::class.java)
 
-    val outputFile: RegularFileProperty = objects.fileProperty().convention(
-        project.layout.buildDirectory.file(DEFAULT_OUTPUT_FILE)
-    )
+    val inputFile: RegularFileProperty = objects.fileProperty().convention {
+        project.file(DEFAULT_INPUT_FILE)
+    }
+
+    val outputFile: RegularFileProperty = objects.fileProperty().convention {
+        project.file(DEFAULT_OUTPUT_FILE)
+    }
 
     private var transformer: (LibraryInfo) -> LibraryInfo = { it }
 
     fun transformLibrariesInfo(transformer: (LibraryInfo) -> LibraryInfo) {
         this.transformer = transformer
     }
+
     fun getTransformer(): (LibraryInfo) -> LibraryInfo {
         return transformer
+    }
+
+    companion object {
+        const val DEFAULT_OUTPUT_FILE = "licenses.yml"
+        const val DEFAULT_INPUT_FILE = "licenses.yml"
     }
 }

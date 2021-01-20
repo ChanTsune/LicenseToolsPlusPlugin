@@ -16,6 +16,7 @@ abstract class TemplatePlugin : Plugin<Project> {
             it.tag.set(extension.tag)
             it.message.set(extension.message)
             it.outputFile.set(extension.outputFile)
+            it.inputFile.set(extension.inputFile)
             it.transform = extension.getTransformer()
         }
     }
