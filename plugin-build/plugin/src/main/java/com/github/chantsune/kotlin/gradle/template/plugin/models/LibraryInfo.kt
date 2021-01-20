@@ -23,13 +23,13 @@ data class LibraryInfo(
     @SerialName("copyrightHolders")
     var copyrightHolders: List<String>? = null,
     @SerialName("author")
-    var author: String?,
+    var author: String? = null,
     @SerialName("authors")
     var authors: List<String>? = null,
     @SerialName("notice")
     var notice: String? = null,
     @SerialName("licenseUrl")
-    var licenseUrl: String?,
+    var licenseUrl: String? = null,
     @SerialName("skip")
     var skip: Boolean? = null,
     @SerialName("forceGenerate")
