@@ -4,7 +4,7 @@ plugins {
 }
 
 templateExampleConfig {
-    message.set("Just trying this gradle plugin...")
+    enableVerify = false
     transformLibrariesInfo {
         it
     }
