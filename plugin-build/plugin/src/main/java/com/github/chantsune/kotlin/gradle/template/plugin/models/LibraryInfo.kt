@@ -43,4 +43,8 @@ data class LibraryInfo(
 
     @Transient
     var artifactId: ArtifactId = ArtifactId.parse(artifact)
+
+    fun verify() {
+
+    }
 }

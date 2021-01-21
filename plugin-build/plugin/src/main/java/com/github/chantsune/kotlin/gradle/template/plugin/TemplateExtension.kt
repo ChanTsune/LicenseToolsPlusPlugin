@@ -3,7 +3,6 @@ package com.github.chantsune.kotlin.gradle.template.plugin
 import com.github.chantsune.kotlin.gradle.template.plugin.models.LibraryInfo
 import org.gradle.api.Project
 import org.gradle.api.file.RegularFileProperty
-import org.gradle.api.provider.Property
 import javax.inject.Inject
 
 @Suppress("UnnecessaryAbstractClass")
@@ -11,9 +10,7 @@ abstract class TemplateExtension @Inject constructor(project: Project) {
 
     private val objects = project.objects
 
-    val message: Property<String> = objects.property(String::class.java)
-
-    val tag: Property<String> = objects.property(String::class.java)
+    var enableVerify: Boolean = false
 
     val inputFile: RegularFileProperty = objects.fileProperty().convention {
         project.file(DEFAULT_INPUT_FILE)
