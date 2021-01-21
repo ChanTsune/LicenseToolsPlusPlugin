@@ -40,6 +40,7 @@ data class LibraryInfo(
         set(value) {
             name = value
         }
+
     @Transient
     var artifactId: ArtifactId = ArtifactId.parse(artifact)
 }
