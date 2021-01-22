@@ -3,9 +3,6 @@ package com.github.chantsune.kotlin.gradle.template.plugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-const val EXTENSION_NAME = "templateExampleConfig"
-const val TASK_NAME = "templateExample"
-
 abstract class TemplatePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         // Add the 'template' extension object
@@ -18,5 +15,9 @@ abstract class TemplatePlugin : Plugin<Project> {
             it.inputFile.set(extension.inputFile)
             it.transform = extension.getTransformer()
         }
+    }
+    companion object {
+        const val EXTENSION_NAME = "templateExampleConfig"
+        const val TASK_NAME = "templateExample"
     }
 }
