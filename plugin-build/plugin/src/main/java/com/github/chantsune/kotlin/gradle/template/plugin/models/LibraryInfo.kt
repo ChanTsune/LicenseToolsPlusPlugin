@@ -1,5 +1,6 @@
 package com.github.chantsune.kotlin.gradle.template.plugin.models
 
+import com.github.chantsune.kotlin.gradle.template.plugin.exceptions.NotEnoughInformationException
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
@@ -45,6 +46,15 @@ data class LibraryInfo(
     var artifactId: ArtifactId = ArtifactId.parse(artifact)
 
     fun verify() {
+        if (license.isNullOrBlank()) throw NotEnoughInformationException(this)
+        if (!hasCopyrightStatement()) throw NotEnoughInformationException(this)
+    }
 
+    private fun hasCopyrightStatement(): Boolean {
+        return when {
+            notice?.isNotBlank() ?: false -> true
+            copyrightHolder.isNullOrEmpty() -> false
+            else -> true
+        }
     }
 }
