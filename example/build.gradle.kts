@@ -8,4 +8,8 @@ templateExampleConfig {
     transformLibrariesInfo {
         it
     }
+    project.file("example-licenses.yml").also {
+        inputFile.set(it)
+        outputFile.set(it)
+    }
 }
