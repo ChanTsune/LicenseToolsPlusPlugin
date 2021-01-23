@@ -35,11 +35,9 @@ abstract class TemplateExampleTask : DefaultTask() {
 
     @TaskAction
     fun sampleAction() {
-
-        logger.lifecycle("tag is: $enableVerify")
+        logger.lifecycle("enableVerify is: $enableVerify")
         logger.lifecycle("inputFile is: ${inputFile.orNull}")
         logger.lifecycle("outputFile is: ${outputFile.orNull}")
-
 
         val yaml = Yaml(configuration = YamlConfiguration(encodeDefaults = false))
 
