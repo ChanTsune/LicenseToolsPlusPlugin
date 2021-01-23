@@ -53,4 +53,8 @@ abstract class TemplateExampleTask : DefaultTask() {
             outputFile.get().asFile.writeText(it)
         }
     }
+
+    companion object {
+        const val NAME = "transformLicensesYaml"
+    }
 }
