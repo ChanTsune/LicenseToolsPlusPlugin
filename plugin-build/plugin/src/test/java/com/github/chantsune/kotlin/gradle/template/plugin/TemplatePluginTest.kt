@@ -10,6 +10,6 @@ class TemplatePluginTest {
         val project = ProjectBuilder.builder().build()
         project.pluginManager.apply("com.github.chantsune.kotlin.gradle.template.plugin")
 
-        assert(project.tasks.getByName(TemplateExampleTask.NAME) is TemplateExampleTask)
+        assert(project.tasks.getByName(LicenseToolsPlusTask.NAME) is LicenseToolsPlusTask)
     }
 }

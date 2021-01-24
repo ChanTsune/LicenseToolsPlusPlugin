@@ -9,7 +9,7 @@ abstract class TemplatePlugin : Plugin<Project> {
         val extension = project.extensions.create(TemplateExtension.NAME, TemplateExtension::class.java, project)
 
         // Add a task that uses configuration from the extension object
-        project.tasks.register(TemplateExampleTask.NAME, TemplateExampleTask::class.java) {
+        project.tasks.register(LicenseToolsPlusTask.NAME, LicenseToolsPlusTask::class.java) {
             it.enableVerify = extension.enableVerify
             it.outputFile.set(extension.outputFile)
             it.inputFile.set(extension.inputFile)

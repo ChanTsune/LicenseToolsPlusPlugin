@@ -12,7 +12,7 @@ import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 
-abstract class TemplateExampleTask : DefaultTask() {
+abstract class LicenseToolsPlusTask : DefaultTask() {
 
     init {
         description = "Just a sample template task"
