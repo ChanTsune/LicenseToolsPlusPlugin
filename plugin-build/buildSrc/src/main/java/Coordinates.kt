@@ -1,5 +1,5 @@
 object PluginCoordinates {
-    const val ARTIFACT_ID = "license-tools-plus-plugin"
+    const val ARTIFACT_ID = "license-tools-plus"
     const val GROUP = "com.github.chantsune.gradle.plugin"
     const val ID = "$GROUP.$ARTIFACT_ID"
     const val VERSION = "1.0.0"
