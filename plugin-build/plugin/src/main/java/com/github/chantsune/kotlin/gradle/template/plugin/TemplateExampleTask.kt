@@ -50,6 +50,8 @@ abstract class TemplateExampleTask : DefaultTask() {
         }.let {
             yaml.encodeToString(it)
         }.let {
+            if (it.endsWith("\n")) it else it + "\n"
+        }.let {
             outputFile.get().asFile.writeText(it)
         }
     }
