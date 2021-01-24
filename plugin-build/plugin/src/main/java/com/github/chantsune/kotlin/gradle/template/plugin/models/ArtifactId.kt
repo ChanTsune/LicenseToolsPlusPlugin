@@ -6,8 +6,13 @@ data class ArtifactId(
     val version: String
 ) {
     companion object {
+        private const val NUMBER_OF_PARAMETER = 3
         fun parse(artifactId: String): ArtifactId {
-            return ArtifactId("", "", "")
+            val parts = artifactId.split(":")
+            if (parts.size != NUMBER_OF_PARAMETER) {
+                throw IllegalArgumentException("Invalid argument $artifactId")
+            }
+            return ArtifactId(parts[0], parts[1], parts[2])
         }
     }
 }
