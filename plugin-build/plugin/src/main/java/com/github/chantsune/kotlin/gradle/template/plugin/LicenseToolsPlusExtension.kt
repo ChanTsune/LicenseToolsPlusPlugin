@@ -3,30 +3,36 @@ package com.github.chantsune.kotlin.gradle.template.plugin
 import com.github.chantsune.kotlin.gradle.template.plugin.models.LibraryInfo
 import org.gradle.api.Project
 import org.gradle.api.file.RegularFileProperty
-import org.gradle.api.provider.Property
 import javax.inject.Inject
 
-const val DEFAULT_OUTPUT_FILE = "template-example.txt"
-
 @Suppress("UnnecessaryAbstractClass")
-abstract class TemplateExtension @Inject constructor(project: Project) {
+abstract class LicenseToolsPlusExtension @Inject constructor(project: Project) {
 
     private val objects = project.objects
 
-    val message: Property<String> = objects.property(String::class.java)
+    var enableVerify: Boolean = false
 
-    val tag: Property<String> = objects.property(String::class.java)
+    val inputFile: RegularFileProperty = objects.fileProperty().convention {
+        project.file(DEFAULT_INPUT_FILE)
+    }
 
-    val outputFile: RegularFileProperty = objects.fileProperty().convention(
-        project.layout.buildDirectory.file(DEFAULT_OUTPUT_FILE)
-    )
+    val outputFile: RegularFileProperty = objects.fileProperty().convention {
+        project.file(DEFAULT_OUTPUT_FILE)
+    }
 
     private var transformer: (LibraryInfo) -> LibraryInfo = { it }
 
     fun transformLibrariesInfo(transformer: (LibraryInfo) -> LibraryInfo) {
         this.transformer = transformer
     }
+
     fun getTransformer(): (LibraryInfo) -> LibraryInfo {
         return transformer
+    }
+
+    companion object {
+        private const val DEFAULT_OUTPUT_FILE = "licenses.yml"
+        private const val DEFAULT_INPUT_FILE = "licenses.yml"
+        const val NAME = "licenseToolsPlus"
     }
 }
