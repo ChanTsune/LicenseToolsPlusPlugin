@@ -33,6 +33,6 @@ abstract class TemplateExtension @Inject constructor(project: Project) {
     companion object {
         private const val DEFAULT_OUTPUT_FILE = "licenses.yml"
         private const val DEFAULT_INPUT_FILE = "licenses.yml"
-        const val NAME = "licenseToolsExtension"
+        const val NAME = "licenseToolsPlus"
     }
 }

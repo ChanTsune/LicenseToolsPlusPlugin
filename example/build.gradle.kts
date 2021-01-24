@@ -4,7 +4,7 @@ plugins {
     id("com.github.chantsune.kotlin.gradle.template.plugin")
 }
 
-licenseToolsExtension {
+licenseToolsPlus {
     enableVerify = false
     transformLibrariesInfo {
         it
