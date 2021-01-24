@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = ("com.github.chantsune.kotlin.gradle.template")
+rootProject.name = ("LicenseToolsPlusPlugin")
 
 include(":plugin")
