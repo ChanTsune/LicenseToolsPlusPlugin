@@ -3,7 +3,7 @@ package com.github.chantsune.kotlin.gradle.template.plugin
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test
 
-class TemplatePluginTest {
+class LicenseToolsPlusPluginTest {
 
     @Test
     fun `plugin is applied correctly to the project`() {
