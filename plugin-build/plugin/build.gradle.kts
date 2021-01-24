@@ -57,3 +57,14 @@ tasks.create("setupPluginUploadFromEnvironment") {
         System.setProperty("gradle.publish.secret", secret)
     }
 }
+
+publishing {
+    publications {
+        create("plugin", MavenPublication::class.java) {
+            from(components.findByName("java"))
+            groupId = PluginCoordinates.GROUP
+            artifactId = PluginCoordinates.ARTIFACT_ID
+            version = PluginCoordinates.VERSION
+        }
+    }
+}
