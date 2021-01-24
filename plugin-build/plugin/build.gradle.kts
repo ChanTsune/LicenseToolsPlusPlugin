@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.serialization")
     id("java-gradle-plugin")
     id("com.gradle.plugin-publish")
+    id("maven-publish")
 }
 
 dependencies {
