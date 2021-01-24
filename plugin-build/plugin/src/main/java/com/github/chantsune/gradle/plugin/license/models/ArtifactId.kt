@@ -1,4 +1,4 @@
-package com.github.chantsune.kotlin.gradle.template.plugin.models
+package com.github.chantsune.gradle.plugin.license.models
 
 data class ArtifactId(
     val group: String,

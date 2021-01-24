@@ -1,4 +1,4 @@
-package com.github.chantsune.kotlin.gradle.template.plugin
+package com.github.chantsune.gradle.plugin.license
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

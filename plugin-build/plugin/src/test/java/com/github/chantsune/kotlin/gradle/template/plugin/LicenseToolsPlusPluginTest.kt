@@ -1,5 +1,6 @@
 package com.github.chantsune.kotlin.gradle.template.plugin
 
+import com.github.chantsune.gradle.plugin.license.LicenseToolsPlusTask
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test
 
