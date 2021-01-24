@@ -6,7 +6,7 @@ import org.gradle.api.file.RegularFileProperty
 import javax.inject.Inject
 
 @Suppress("UnnecessaryAbstractClass")
-abstract class TemplateExtension @Inject constructor(project: Project) {
+abstract class LicenseToolsPlusExtension @Inject constructor(project: Project) {
 
     private val objects = project.objects
 
