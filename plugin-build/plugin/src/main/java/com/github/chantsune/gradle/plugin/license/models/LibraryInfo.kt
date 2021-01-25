@@ -1,6 +1,6 @@
-package com.github.chantsune.kotlin.gradle.template.plugin.models
+package com.github.chantsune.gradle.plugin.license.models
 
-import com.github.chantsune.kotlin.gradle.template.plugin.exceptions.NotEnoughInformationException
+import com.github.chantsune.gradle.plugin.license.exceptions.NotEnoughInformationException
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient

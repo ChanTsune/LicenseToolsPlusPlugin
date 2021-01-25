@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.serialization")
     id("java-gradle-plugin")
     id("com.gradle.plugin-publish")
+    id("maven-publish")
 }
 
 dependencies {
@@ -54,5 +55,16 @@ tasks.create("setupPluginUploadFromEnvironment") {
 
         System.setProperty("gradle.publish.key", key)
         System.setProperty("gradle.publish.secret", secret)
+    }
+}
+
+publishing {
+    publications {
+        create("plugin", MavenPublication::class.java) {
+            from(components.findByName("java"))
+            groupId = PluginCoordinates.GROUP
+            artifactId = PluginCoordinates.ARTIFACT_ID
+            version = PluginCoordinates.VERSION
+        }
     }
 }

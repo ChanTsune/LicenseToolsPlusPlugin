@@ -1,8 +1,8 @@
-package com.github.chantsune.kotlin.gradle.template.plugin
+package com.github.chantsune.gradle.plugin.license
 
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
-import com.github.chantsune.kotlin.gradle.template.plugin.models.LibraryInfo
+import com.github.chantsune.gradle.plugin.license.models.LibraryInfo
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.encodeToString
 import org.gradle.api.DefaultTask

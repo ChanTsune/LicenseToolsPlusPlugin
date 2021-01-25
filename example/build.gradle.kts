@@ -1,7 +1,7 @@
 plugins {
     java
     id("com.cookpad.android.plugin.license-tools") version "1.2.5"
-    id("com.github.chantsune.kotlin.gradle.template.plugin")
+    id("com.github.chantsune.gradle.plugin.license-tools-plus")
 }
 
 licenseToolsPlus {

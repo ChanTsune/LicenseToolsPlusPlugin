@@ -1,6 +1,6 @@
-package com.github.chantsune.kotlin.gradle.template.plugin
+package com.github.chantsune.gradle.plugin.license
 
-import com.github.chantsune.kotlin.gradle.template.plugin.models.LibraryInfo
+import com.github.chantsune.gradle.plugin.license.models.LibraryInfo
 import org.gradle.api.Project
 import org.gradle.api.file.RegularFileProperty
 import javax.inject.Inject
