@@ -1,0 +1,97 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.chantsune.gradle.plugin",
+    "module": "plugin",
+    "version": "0.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8",
+      "buildId": "sby2t772rnc5hbb5zrzj4rziqi"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.4.21-2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "plugin-0.0.0.jar",
+          "url": "plugin-0.0.0.jar",
+          "size": 29130,
+          "sha512": "a37423a2350310792de27500418c569e5d7015aecf6694dda3b242c59404583572100adc943f6bc2daef0553e9b4c7269533540532e33826e1fe445194793457",
+          "sha256": "e787b8896e918c37ee3eb84edf9d2bff4324597d9fe435b80a60999b0ed07726",
+          "sha1": "94d688fe962601c9067a6e874cc35c5851777c9b",
+          "md5": "ac025b84639878a08e8408c6ab1f302b"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.0.1"
+          }
+        },
+        {
+          "group": "com.charleskorn.kaml",
+          "module": "kaml",
+          "version": {
+            "requires": "0.26.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.4.21-2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "plugin-0.0.0.jar",
+          "url": "plugin-0.0.0.jar",
+          "size": 29130,
+          "sha512": "a37423a2350310792de27500418c569e5d7015aecf6694dda3b242c59404583572100adc943f6bc2daef0553e9b4c7269533540532e33826e1fe445194793457",
+          "sha256": "e787b8896e918c37ee3eb84edf9d2bff4324597d9fe435b80a60999b0ed07726",
+          "sha1": "94d688fe962601c9067a6e874cc35c5851777c9b",
+          "md5": "ac025b84639878a08e8408c6ab1f302b"
+        }
+      ]
+    }
+  ]
+}
