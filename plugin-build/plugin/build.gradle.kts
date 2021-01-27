@@ -61,7 +61,7 @@ tasks.create("setupPluginUploadFromEnvironment") {
 publishing {
     repositories {
         maven {
-            url = project.parent?.uri("../maven")!!
+            url = project.parent?.uri("../repository")!!
         }
     }
 }
