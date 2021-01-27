@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = ("kotlin-gradle-plugin-template")
+rootProject.name = ("LicenceToolsPlus")
 
 include(":example")
 includeBuild("plugin-build")

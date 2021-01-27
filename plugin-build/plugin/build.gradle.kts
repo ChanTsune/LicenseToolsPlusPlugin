@@ -59,12 +59,9 @@ tasks.create("setupPluginUploadFromEnvironment") {
 }
 
 publishing {
-    publications {
-        create("plugin", MavenPublication::class.java) {
-            from(components.findByName("java"))
-            groupId = PluginCoordinates.GROUP
-            artifactId = PluginCoordinates.ARTIFACT_ID
-            version = PluginCoordinates.VERSION
+    repositories {
+        maven {
+            url = project.parent?.uri("../repository")!!
         }
     }
 }
