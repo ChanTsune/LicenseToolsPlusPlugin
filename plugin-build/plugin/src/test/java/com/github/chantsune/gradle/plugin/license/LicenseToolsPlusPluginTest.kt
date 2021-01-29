@@ -8,7 +8,7 @@ class LicenseToolsPlusPluginTest {
     @Test
     fun `plugin is applied correctly to the project`() {
         val project = ProjectBuilder.builder().build()
-        project.pluginManager.apply("com.github.chantsune.gradle.plugin.license-tools-plus")
+        project.pluginManager.apply("com.github.chantsune.license-tools-plus")
 
         assert(project.tasks.getByName(LicenseToolsPlusTask.NAME) is LicenseToolsPlusTask)
     }
