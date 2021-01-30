@@ -8,4 +8,4 @@ pluginManagement {
 
 rootProject.name = ("LicenseToolsPlusPlugin")
 
-include(":plugin")
+include(":license-tools-plus")
