@@ -44,7 +44,7 @@ abstract class LicenseToolsPlusTask : DefaultTask() {
         inputFile.get().asFile.readText().let {
             yaml.decodeFromString(ListSerializer(LibraryInfo.serializer()), it)
         }.map {
-            transform(it)
+            it.apply(transform)
         }.distinctBy {
             it.name
         }.also { libsInfo ->
