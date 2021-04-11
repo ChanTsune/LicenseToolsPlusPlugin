@@ -20,13 +20,13 @@ abstract class LicenseToolsPlusExtension @Inject constructor(project: Project) {
         project.file(DEFAULT_OUTPUT_FILE)
     }
 
-    private var transformer: (LibraryInfo) -> LibraryInfo = { it }
+    private var transformer: LibraryInfo.() -> Unit = { }
 
-    fun transformLibrariesInfo(transformer: (LibraryInfo) -> LibraryInfo) {
+    fun transformLibrariesInfo(transformer: LibraryInfo.() -> Unit) {
         this.transformer = transformer
     }
 
-    fun getTransformer(): (LibraryInfo) -> LibraryInfo {
+    fun getTransformer(): LibraryInfo.() -> Unit {
         return transformer
     }
 

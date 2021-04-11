@@ -31,7 +31,7 @@ abstract class LicenseToolsPlusTask : DefaultTask() {
     abstract val outputFile: RegularFileProperty
 
     @get:Input
-    abstract var transform: (LibraryInfo) -> LibraryInfo
+    abstract var transform: LibraryInfo.() -> Unit
 
     @TaskAction
     fun sampleAction() {
@@ -43,7 +43,11 @@ abstract class LicenseToolsPlusTask : DefaultTask() {
 
         inputFile.get().asFile.readText().let {
             yaml.decodeFromString(ListSerializer(LibraryInfo.serializer()), it)
-        }.map(transform).also { libsInfo ->
+        }.map {
+            transform(it)
+        }.distinctBy {
+            it.name
+        }.also { libsInfo ->
             if (enableVerify) {
                 libsInfo.map { it.verify() }
             }

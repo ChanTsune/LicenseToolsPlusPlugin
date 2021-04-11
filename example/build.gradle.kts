@@ -7,7 +7,7 @@ plugins {
 licenseToolsPlus {
     enableVerify = false
     transformLibrariesInfo {
-        it
+        name
     }
     project.file("example-licenses.yml").also {
         inputFile.set(it)
