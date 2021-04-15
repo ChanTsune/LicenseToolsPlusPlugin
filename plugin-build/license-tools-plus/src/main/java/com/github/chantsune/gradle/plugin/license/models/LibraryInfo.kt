@@ -46,8 +46,8 @@ data class LibraryInfo(
     var artifactId: ArtifactId = ArtifactId.parse(artifact)
 
     fun verify() {
-        if (license.isNullOrBlank()) throw NotEnoughInformationException(this)
-        if (!hasCopyrightStatement()) throw NotEnoughInformationException(this)
+        if (license.isNullOrBlank()) throw NotEnoughInformationException(this, "license is Null or Blank")
+        if (!hasCopyrightStatement()) throw NotEnoughInformationException(this, "has not CopyrightStatement")
     }
 
     private fun hasCopyrightStatement(): Boolean {
