@@ -46,7 +46,7 @@ abstract class LicenseToolsPlusTask : DefaultTask() {
         }.map {
             it.apply(transform)
         }.distinctBy {
-            it.name
+            it.artifact
         }.also { libsInfo ->
             if (enableVerify) {
                 libsInfo.map { it.verify() }
