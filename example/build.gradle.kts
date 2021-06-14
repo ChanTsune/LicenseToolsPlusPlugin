@@ -1,6 +1,6 @@
 plugins {
     java
-    id("com.cookpad.android.plugin.license-tools") version "1.2.6"
+    id("com.cookpad.android.plugin.license-tools") version "1.2.8"
     id("com.github.chantsune.license-tools-plus")
 }
 
