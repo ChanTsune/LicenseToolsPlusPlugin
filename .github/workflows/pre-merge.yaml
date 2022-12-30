@@ -32,11 +32,10 @@ jobs:
           path: ~/.gradle/wrapper/
           key: cache-gradle-wrapper
       - name: Run Gradle tasks
-        run: ./gradlew preMerge --continue
+        run: ./gradlew preMerge --continue --warning-mode all
 
-        # We do a run of the new task `templateExample` created by the plugin
       - name: Run the plugin
-        run: ./gradlew transformLicensesYaml
+        run: ./gradlew transformLicensesYaml --warning-mode all
         if: success()
 
       - name: Stop Gradle
