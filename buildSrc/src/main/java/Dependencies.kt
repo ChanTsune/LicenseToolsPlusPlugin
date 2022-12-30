@@ -8,7 +8,3 @@ object BuildPluginsVersion {
     const val KTLINT = "10.0.0"
     const val VERSIONS_PLUGIN = "0.38.0"
 }
-
-object TestingLib {
-    const val JUNIT = "junit:junit:4.13.1"
-}
