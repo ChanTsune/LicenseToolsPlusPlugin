@@ -10,7 +10,7 @@ dependencies {
     implementation(gradleApi())
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
-    implementation("com.charleskorn.kaml:kaml:0.26.0")
+    implementation("com.charleskorn.kaml:kaml:0.38.0")
 
     testImplementation("junit:junit:4.13.2")
 }
