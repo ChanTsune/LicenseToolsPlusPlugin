@@ -1,7 +1,3 @@
-object Versions {
-    const val KTLINT = "0.40.0"
-}
-
 object BuildPluginsVersion {
     const val DETEKT = "1.16.0"
     const val KTLINT = "10.0.0"
