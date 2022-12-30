@@ -3,7 +3,7 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     kotlin("jvm") version "1.8.0" apply false
     kotlin("plugin.serialization") version "1.8.0"
-    id("com.gradle.plugin-publish") version "0.12.0" apply false
+    id("com.gradle.plugin-publish") version "0.21.0" apply false
     id("io.gitlab.arturbosch.detekt") version "1.16.0"
     id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
     id("com.github.ben-manes.versions") version "0.44.0"
