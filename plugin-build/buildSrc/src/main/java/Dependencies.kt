@@ -1,7 +1,6 @@
 object Versions {
     const val KTLINT = "0.40.0"
     const val SERIALIZATION = "1.0.1"
-    const val KAML = "0.26.0"
 }
 
 object BuildPluginsVersion {
