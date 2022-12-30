@@ -40,9 +40,10 @@ abstract class LicenseToolsPlusTask : DefaultTask() {
         logger.lifecycle("outputFile is: ${outputFile.orNull}")
 
         val yaml = Yaml(configuration = YamlConfiguration(encodeDefaults = false))
+        val serializer = ListSerializer(LibraryInfo.serializer())
 
         inputFile.get().asFile.readText().let {
-            yaml.decodeFromString(ListSerializer(LibraryInfo.serializer()), it)
+            yaml.decodeFromString(serializer, it)
         }.map {
             it.apply(transform)
         }.distinctBy {
@@ -52,7 +53,7 @@ abstract class LicenseToolsPlusTask : DefaultTask() {
                 libsInfo.map { it.verify() }
             }
         }.let {
-            yaml.encodeToString(it)
+            yaml.encodeToString(serializer, it)
         }.let {
             if (it.endsWith("\n")) it else it + "\n"
         }.let {
