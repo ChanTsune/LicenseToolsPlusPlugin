@@ -1,8 +1,8 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
-    kotlin("jvm") version "1.8.0" apply false
-    kotlin("plugin.serialization") version "1.8.0"
+    kotlin("jvm") version "1.8.10" apply false
+    kotlin("plugin.serialization") version "1.8.10"
     id("com.gradle.plugin-publish") version "0.21.0" apply false
     id("io.gitlab.arturbosch.detekt") version "1.16.0"
     id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
